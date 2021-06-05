@@ -1,0 +1,62 @@
+# See: https://arduino.github.io/arduino-cli/latest/platform-specification/
+
+menu.pnum=Board part number
+
+menu.xserial=U(S)ART support
+menu.usb=USB support (if available)
+menu.xusb=USB speed (if available)
+menu.virtio=Virtual serial support
+
+menu.opt=Optimize
+menu.rtlib=C Runtime Library
+menu.upload_method=Upload method
+
+################################################################################
+# RECore
+RECore.name=RECore series
+
+RECore.build.core=arduino
+RECore.build.board=RECore
+RECore.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial}
+RECore.build.mcu=cortex-m4
+RECore.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
+RECore.build.series=STM32G4xx
+RECore.build.cmsis_lib_gcc=arm_cortexM4lf_math
+
+# RECore G431
+RECore.menu.pnum.RECore_G431CBU=RECore
+RECore.menu.pnum.RECore_G431CBU.upload.maximum_size=131072
+RECore.menu.pnum.RECore_G431CBU.upload.maximum_data_size=32768
+RECore.menu.pnum.RECore_G431CBU.build.board=RECore_G431CBU
+RECore.menu.pnum.RECore_G431CBU.build.product_line=STM32G431xx
+RECore.menu.pnum.RECore_G431CBU.build.variant=STM32G4xx/RECoreG431C(6-8-B)U_G441CBU
+
+# RECore G431 wos
+RECore.menu.pnum.RECore_G431CBU_woss=RECore (without SafeStart)
+RECore.menu.pnum.RECore_G431CBU_woss.upload.maximum_size=131072
+RECore.menu.pnum.RECore_G431CBU_woss.upload.maximum_data_size=32768
+RECore.menu.pnum.RECore_G431CBU_woss.build.board=RECore_G431CBU_woss
+RECore.menu.pnum.RECore_G431CBU_woss.build.product_line=STM32G431xx
+RECore.menu.pnum.RECore_G431CBU_woss.build.variant=STM32G4xx/RECoreG431C(6-8-B)U_G441CBU
+
+# Upload menu
+RECore.menu.upload_method.autodfuMethod=RECore Auto DFU Writer (Serial)
+RECore.menu.upload_method.autodfuMethod.upload.pid=104
+RECore.menu.upload_method.autodfuMethod.upload.pagesize=0
+RECore.menu.upload_method.autodfuMethod.upload.options={serial.port.file} -s
+RECore.menu.upload_method.autodfuMethod.upload.tool=RECore_dfu_writer
+
+RECore.menu.upload_method.swdMethod=STM32CubeProgrammer (SWD)
+RECore.menu.upload_method.swdMethod.upload.protocol=0
+RECore.menu.upload_method.swdMethod.upload.options=-g
+RECore.menu.upload_method.swdMethod.upload.tool=stm32CubeProg
+
+RECore.menu.upload_method.serialMethod=STM32CubeProgrammer (Serial)
+RECore.menu.upload_method.serialMethod.upload.protocol=1
+RECore.menu.upload_method.serialMethod.upload.options={serial.port.file} -s
+RECore.menu.upload_method.serialMethod.upload.tool=stm32CubeProg
+
+RECore.menu.upload_method.dfuMethod=STM32CubeProgrammer (DFU)
+RECore.menu.upload_method.dfuMethod.upload.protocol=2
+RECore.menu.upload_method.dfuMethod.upload.options=-g
+RECore.menu.upload_method.dfuMethod.upload.tool=stm32CubeProg
