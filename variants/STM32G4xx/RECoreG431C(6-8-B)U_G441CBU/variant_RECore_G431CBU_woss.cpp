@@ -11,7 +11,7 @@
  *******************************************************************************
  */
 
-#if defined(ARDUINO_RECore_G431CBU)
+#if defined(ARDUINO_RECore_G431CBU_WOSS)
 #include "pins_arduino.h"
 
 // Digital PinName array
