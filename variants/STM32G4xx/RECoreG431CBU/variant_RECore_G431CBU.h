@@ -1,6 +1,6 @@
 /*
  *******************************************************************************
- * Copyright (c) 2019-2021, STMicroelectronics
+ * Copyright (c) 2020-2021, STMicroelectronics
  * All rights reserved.
  *
  * This software component is licensed by ST under BSD 3-Clause license,
@@ -15,53 +15,55 @@
 /*----------------------------------------------------------------------------
  *        STM32 pins number
  *----------------------------------------------------------------------------*/
-// board doesn't breakout r3 connectors so listing in chip order
-// LEFT
-#define PC13                    0   // PHASE_UL
-#define PC14                    1   // CAN_TERM
-#define PC15                    2   // x (NOT_CONNECTED)
-#define PF0                     3   // OSC_IN
-#define PF1                     4   // OSC_OUT
-#define PG10                    5   // NRST
-#define PA0                     PIN_A0  // VBUS
-#define PA1                     PIN_A1  // CURR1_H
-#define PA2                     PIN_A2  // OP1_OUT
-#define PA3                     PIN_A3  // CURR1_L
-#define PA4                     PIN_A4  // BEMF1
-// BOTTOM
-#define PA5                     PIN_A5  // CURR2_L
-#define PA6                     PIN_A6  // OP2_OUT
-#define PA7                     PIN_A7  // CURR2_H
-#define PC4                     PIN_A8  // BEMF2
-#define PB0                     PIN_A9  // CURR3_H
-#define PB1                     PIN_A10 // OP3_OUT
-#define PB2                     PIN_A11 // CURR3_L
-#define PB10                    18  // x
-#define PB11                    PIN_A12 // BEMF3
-// RIGHT
-#define PB12                    PIN_A13 // POTENTIOMETER
-#define PB13                    21  // x
-#define PB14                    PIN_A14  // TEMPERATURE
-#define PB15                    PIN_A15  // PHASE_WL
-#define PC6                     24  // LED_BUILTIN
-#define PA8                     25  // PHASE_UH
-#define PA9                     26  // PHASE_VH
-#define PA10                    27  // PHASE_WH
-#define PA11                    28  // CAN_RX
-#define PA12                    29  // PHASE_VL
-#define PA13                    30  // SWDIO
-// TOP
-#define PA14                    31  // SWCLK
-#define PA15                    32  // PWM
-#define PC10                    33  // BUTTON
-#define PC11                    34  // CAN_SHDN
-#define PB3                     35  // USART2_TX
-#define PB4                     36  // USART2_RX
-#define PB5                     37  // GPIO_BEMF
-#define PB6                     38  // HALL1/ENCODER_A
-#define PB7                     39  // HALL2/ENCODER_B
-#define PB8                     40  // HALL3/ENCODER_Z
-#define PB9                     41  // CAN_TX
+#define PA10                    0
+#define PA9                     1
+#define PA8                     2
+#define PC4                     PIN_A0
+#define PB2                     PIN_A1
+#define PA7                     PIN_A2
+#define PA6                     PIN_A3
+#define PA5                     PIN_A4
+#define PA3                     PIN_A5
+#define PA1                     PIN_A6
+#define PA2                     PIN_A7
+#define PA11                    11
+#define PA12                    12
+
+#define PB6                     13
+#define PB1                     14
+
+#define PA15                    15
+#define PB3                     16
+#define PB10                    17
+#define PB11                    18
+#define PC6                     19
+#define PB5                     20
+#define PB0                     21
+#define PB7                     22
+#define PC13                    23
+#define PB4                     24
+#define PA4                     25
+
+#define PB12                    26
+#define PB15                    27
+#define PB14                    28
+#define PB13                    29
+
+#define PA0                     PIN_A8
+
+#define PC11                    31
+#define PB9                     32
+
+/*
+#define PA13                    13
+#define PA14                    14
+#define PB8                     24
+#define PC14                    37
+#define PC15                    38
+#define PF0                     PIN_A16
+#define PF1                     PIN_A17
+#define PG10                    41
+*/
 
 // Alternate pins number
 #define PA0_ALT1                (PA0  | ALT1)
@@ -107,58 +109,17 @@
 #define PC6_ALT1                (PC6  | ALT1)
 #define PC13_ALT1               (PC13 | ALT1)
 
-#define NUM_DIGITAL_PINS        42
-#define NUM_ANALOG_INPUTS       16
-
-/* Alias */
-#define A_PHASE_UL              PC13
-#define A_CAN_TERM              PC14
-#define A_VBUS                  PA0
-#define A_CURR1_H               PA1
-#define A_OP1_OUT               PA2
-#define A_CURR1_L               PA3
-#define A_BEMF1                 PA4
-#define A_CURR2_L               PA5
-#define A_OP2_OUT               PA6
-#define A_CURR2_H               PA7
-#define A_BEMF2                 PC4
-#define A_CURR3_H               PB0
-#define A_OP3_OUT               PB1
-#define A_CURR3_L               PB2
-#define A_BEMF3                 PB11
-#define A_POTENTIOMETER         PB12
-#define A_TEMPERATURE           PB14
-#define A_PHASE_WL              PB15
-#define A_PHASE_UH              PA8
-#define A_PHASE_VH              PA9
-#define A_PHASE_WH              PA10
-#define A_CAN_RX                PA11
-#define A_PHASE_VL              PA12
-#define A_SWDIO                 PA13
-#define A_SWCLK                 PA14
-#define A_PWM                   PA15
-#define A_BUTTON                PC10
-#define A_CAN_SHDN              PC11
-#define A_USART2_TX             PB3
-#define A_USART2_RX             PB4
-#define A_GPIO_BEMF             PB5
-#define A_HALL1                 PB6
-#define A_HALL2                 PB7
-#define A_HALL3                 PB8
-#define A_ENCODER_A             PB6
-#define A_ENCODER_B             PB7
-#define A_ENCODER_Z             PB8
-#define A_CAN_TX                PB9
+#define NUM_DIGITAL_PINS        33
+#define NUM_ANALOG_INPUTS       9
 
 // On-board LED pin number
-#define LED_RED                 PC6
 #ifndef LED_BUILTIN
-  #define LED_BUILTIN           LED_RED
+  #define LED_BUILTIN           PB6
 #endif
 
 // On-board user button
 #ifndef USER_BTN
-  #define USER_BTN              PC10
+  #define USER_BTN              PB1
 #endif
 
 // SPI definitions
@@ -175,21 +136,21 @@
   #define PIN_SPI_SS3           PNUM_NOT_DEFINED
 #endif
 #ifndef PIN_SPI_MOSI
-  #define PIN_SPI_MOSI          PNUM_NOT_DEFINED
+  #define PIN_SPI_MOSI          PA7
 #endif
 #ifndef PIN_SPI_MISO
-  #define PIN_SPI_MISO          PNUM_NOT_DEFINED
+  #define PIN_SPI_MISO          PA6
 #endif
 #ifndef PIN_SPI_SCK
-  #define PIN_SPI_SCK           PNUM_NOT_DEFINED
+  #define PIN_SPI_SCK           PA5
 #endif
 
 // I2C definitions
 #ifndef PIN_WIRE_SDA
-  #define PIN_WIRE_SDA          PB7
+  #define PIN_WIRE_SDA          PA8
 #endif
 #ifndef PIN_WIRE_SCL
-  #define PIN_WIRE_SCL          PB8
+  #define PIN_WIRE_SCL          PC4
 #endif
 
 // Timer Definitions
@@ -202,27 +163,29 @@
 #endif
 
 // UART Definitions
-#define SERIAL_UART_INSTANCE    2 //Connected to ST-Link
+#ifndef SERIAL_UART_INSTANCE
+  #define SERIAL_UART_INSTANCE  101
+#endif
 
-// Default pin used for 'Serial' instance (ex: ST-Link)
+// Default pin used for generic 'Serial' instance
 // Mandatory for Firmata
 #ifndef PIN_SERIAL_RX
-  #define PIN_SERIAL_RX         PB4
+  #define PIN_SERIAL_RX         PA10
 #endif
 #ifndef PIN_SERIAL_TX
-  #define PIN_SERIAL_TX         PB3
+  #define PIN_SERIAL_TX         PA9
 #endif
 
 /* HAL configuration */
-#define HSE_VALUE               (24000000UL)
+#define HSE_VALUE               (8000000UL)
 
-/* Extra HAL modules */
+// Extra HAL modules
+#define HAL_DAC_MODULE_ENABLED
+/*
 #if !defined(HAL_DAC_MODULE_DISABLED)
   #define HAL_DAC_MODULE_ENABLED
 #endif
-#if !defined(HAL_FDCAN_MODULE_DISABLED)
-  #define HAL_FDCAN_MODULE_ENABLED
-#endif
+*/
 
 /*----------------------------------------------------------------------------
  *        Arduino objects - C++ only
@@ -245,5 +208,7 @@
   // SERIAL_PORT_HARDWARE_OPEN  Hardware serial ports which are open for use.  Their RX & TX
   //                            pins are NOT connected to anything by default.
   #define SERIAL_PORT_MONITOR   Serial
-  #define SERIAL_PORT_HARDWARE  SerialLP1
+  #define SERIAL_PORT_USBVIRTUAL  Serial
+  #define SERIAL_PORT_HARDWARE  Serial2
+  
 #endif

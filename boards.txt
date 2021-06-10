@@ -22,6 +22,8 @@ RECore.build.mcu=cortex-m4
 RECore.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
 RECore.build.series=STM32G4xx
 RECore.build.cmsis_lib_gcc=arm_cortexM4lf_math
+RECore.build.peripheral_pins=-DCUSTOM_PERIPHERAL_PINS
+RECore.build.variant_h=variant_RECore_G431CBU.h
 
 # RECore G431
 RECore.menu.pnum.RECore_G431CBU=RECore
@@ -29,7 +31,7 @@ RECore.menu.pnum.RECore_G431CBU.upload.maximum_size=131072
 RECore.menu.pnum.RECore_G431CBU.upload.maximum_data_size=32768
 RECore.menu.pnum.RECore_G431CBU.build.board=RECore_G431CBU
 RECore.menu.pnum.RECore_G431CBU.build.product_line=STM32G431xx
-RECore.menu.pnum.RECore_G431CBU.build.variant=STM32G4xx/RECoreG431C(6-8-B)U_G441CBU
+RECore.menu.pnum.RECore_G431CBU.build.variant=STM32G4xx/RECoreG431CBU
 
 # RECore G431 WOSS
 RECore.menu.pnum.RECore_G431CBU_WOSS=RECore (without SafeStart)
@@ -37,7 +39,7 @@ RECore.menu.pnum.RECore_G431CBU_WOSS.upload.maximum_size=131072
 RECore.menu.pnum.RECore_G431CBU_WOSS.upload.maximum_data_size=32768
 RECore.menu.pnum.RECore_G431CBU_WOSS.build.board=RECore_G431CBU_WOSS
 RECore.menu.pnum.RECore_G431CBU_WOSS.build.product_line=STM32G431xx
-RECore.menu.pnum.RECore_G431CBU_WOSS.build.variant=STM32G4xx/RECoreG431C(6-8-B)U_G441CBU
+RECore.menu.pnum.RECore_G431CBU_WOSS.build.variant=STM32G4xx/RECoreG431CBU
 
 # Upload menu
 RECore.menu.upload_method.autoloaderMethod=RECore Auto Loader (Serial)

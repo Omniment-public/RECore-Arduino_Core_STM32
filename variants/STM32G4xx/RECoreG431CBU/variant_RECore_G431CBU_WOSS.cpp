@@ -27,11 +27,9 @@ const PinName digitalPin[] = {
     PA_7, //D5    - A2 - GPIO3
     PA_6, //D6    - A3 - GPIO4
     PA_5, //D7    - A4 - GPIO5
-
     PA_3, //D8    - A5 - GPIO6
     PA_1, //D9    - A6 - GPIO7
     PA_2, //D10   - A7 - GPIO8
-
     PA_11, //D11   - CAN RX,I2C SCL,Servo3
     PA_12, //D12   - CAN TX,I2C SDA,Servo4
 
@@ -92,6 +90,32 @@ extern "C"
 {
 #endif
 
+
+  WEAK void initVariant(void)
+  {
+    //set pin input sw
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    /* GPIO Ports Clock Enable */
+    __HAL_RCC_GPIOF_CLK_ENABLE();
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+    __HAL_RCC_GPIOB_CLK_ENABLE();
+
+    GPIO_InitStruct.Pin = SW_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+    GPIO_InitStruct.Pull = GPIO_PULLUP;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(SW_GPIO_Port, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = LED_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(SW_GPIO_Port, &GPIO_InitStruct);
+
+    HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+  }
+
+
   /**
   * @brief  System Clock Configuration
   */
@@ -142,30 +166,6 @@ extern "C"
     {
       Error_Handler();
     }
-  }
-
-  WEAK void initVariant(void)
-  {
-    //set pin input sw
-    GPIO_InitTypeDef GPIO_InitStruct = {0};
-    /* GPIO Ports Clock Enable */
-    __HAL_RCC_GPIOF_CLK_ENABLE();
-    __HAL_RCC_GPIOA_CLK_ENABLE();
-    __HAL_RCC_GPIOB_CLK_ENABLE();
-
-    GPIO_InitStruct.Pin = SW_Pin;
-    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-    GPIO_InitStruct.Pull = GPIO_PULLUP;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init(SW_GPIO_Port, &GPIO_InitStruct);
-
-    GPIO_InitStruct.Pin = LED_Pin;
-    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init(SW_GPIO_Port, &GPIO_InitStruct);
-
-    HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
   }
 
 #ifdef __cplusplus

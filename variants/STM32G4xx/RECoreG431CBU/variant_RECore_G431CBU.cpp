@@ -21,21 +21,19 @@ const PinName digitalPin[] = {
     PA_9,  //D1 - VCP TX
 
     //IO PIN Head
-    PA_8, //D2    - GPIO0
-    PC_4, //D3    - A0 - GPIO1
-    PB_2, //D4    - A1 - GPIO2
-    PA_7, //D5    - A2 - GPIO3
-    PA_6, //D6    - A3 - GPIO4
-    PA_5, //D7    - A4 - GPIO5
-
-    PA_3, //D8    - A5 - GPIO6
-    PA_1, //D9    - A6 - GPIO7
-    PA_2, //D10   - A7 - GPIO8
-
+    PA_8,  //D2    - GPIO0
+    PC_4,  //D3    - A0 - GPIO1
+    PB_2,  //D4    - A1 - GPIO2
+    PA_7,  //D5    - A2 - GPIO3
+    PA_6,  //D6    - A3 - GPIO4
+    PA_5,  //D7    - A4 - GPIO5
+    PA_3,  //D8    - A5 - GPIO6
+    PA_1,  //D9    - A6 - GPIO7
+    PA_2,  //D10   - A7 - GPIO8
     PA_11, //D11   - CAN RX,I2C SCL,Servo3
     PA_12, //D12   - CAN TX,I2C SDA,Servo4
 
-    //Builtin IF
+    //onboard IF
     PB_6, //D13   - LED
     PB_1, //D14 - SW
 
@@ -59,11 +57,11 @@ const PinName digitalPin[] = {
     PB_13, //D28 - SPI SCK
 
     //Battery Voltage ADC
-    PA_0 //D29 - A8 - VBATIN
+    PA_0, //D29 - A8 - VBATIN
 
     //no work
-    //PC_11,  //D30
-    //PB_9    //D31
+    PC_11, //D30
+    PB_9   //D31
 };
 
 // Analog (Ax) pin number array
@@ -76,7 +74,7 @@ const uint32_t analogInputPin[] = {
     8,  // A5,  PA3
     9,  // A6,  PA1
     10, // A7,  PA2
-    29, // A8,  PA0
+    30, // A8,  PA0
 };
 
 // ----------------------------------------------------------------------------
