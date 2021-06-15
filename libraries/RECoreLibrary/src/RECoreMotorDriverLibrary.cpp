@@ -275,14 +275,40 @@ void RECoreMotorDriverLibrary::setSteppingSteps(uint8_t set_driver_unit, uint16_
 }
 
 void RECoreMotorDriverLibrary::presetSteppingSpeed(uint8_t set_driver_unit, uint16_t set_motor_speed){
-    if(driver_mode[set_driver_unit] == 2){
-        stepping_speed[set_driver_unit] = 60000000/(motor_step_count[set_driver_unit]*set_motor_speed);
-        if(set_driver_unit == 0){
-            unit_a_tim -> setOverflow(stepping_speed[set_driver_unit], MICROSEC_FORMAT);
-            unit_a_tim -> attachInterrupt(proc_steps_a);
-        }else{
-            unit_b_tim -> setOverflow(stepping_speed[set_driver_unit], MICROSEC_FORMAT);
-            unit_b_tim -> attachInterrupt(proc_steps_b);
+    if (driver_mode[set_driver_unit] == 2)
+    {
+        if (set_motor_speed != 0)
+        {
+            stepping_speed[set_driver_unit] = 60000000 / (motor_step_count[set_driver_unit] * set_motor_speed);
+        }
+        else
+        {
+            stepping_speed[set_driver_unit] = 0;
+        }
+
+        if (set_driver_unit == 0)
+        {
+            if (set_motor_speed != 0)
+            {
+                unit_a_tim->setOverflow(stepping_speed[set_driver_unit], MICROSEC_FORMAT);
+                unit_a_tim->attachInterrupt(proc_steps_a);
+            }
+            else
+            {
+                unit_a_tim->detachInterrupt();
+            }
+        }
+        else
+        {
+            if (set_motor_speed != 0)
+            {
+                unit_b_tim->setOverflow(stepping_speed[set_driver_unit], MICROSEC_FORMAT);
+                unit_b_tim->attachInterrupt(proc_steps_b);
+            }
+            else
+            {
+                unit_b_tim->detachInterrupt();
+            }
         }
     }
 }
