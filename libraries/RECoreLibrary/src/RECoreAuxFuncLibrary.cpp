@@ -15,7 +15,7 @@
 
 float RECoreAuxFuncLibrary::getBatteryVoltage(){
     //(((3.3 / 1023) * vbat_adc) + 0.35) * ((120.0 + 51.0) / 51.0)
-    float vbat_adc = analogRead(29);
+    float vbat_adc = analogRead(A8);
     return (3.35294 * ( (0.00322581 * vbat_adc) + 0.35));
 }
 

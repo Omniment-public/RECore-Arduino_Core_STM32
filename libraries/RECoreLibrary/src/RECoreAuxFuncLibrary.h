@@ -14,7 +14,7 @@ class RECoreAuxFuncLibrary{
     public:
         RECoreAuxFuncLibrary(){
             //init vbat pin
-            pinMode(29,INPUT);
+            pinMode(A8,INPUT);
 
             //init onboard sw
             pinMode(12,INPUT_PULLUP);
