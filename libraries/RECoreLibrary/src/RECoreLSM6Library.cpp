@@ -17,13 +17,13 @@ RECoreLSM6Library::RECoreLSM6Library(){
 }
 
 void RECoreLSM6Library::init() {
-    SPI_2 = new SPIClass(26, 27, 28);
+    SPI_2 = new SPIClass(27, 28, 29);
     SPI_2 -> beginTransaction(SPISettings(8000000, MSBFIRST, SPI_MODE3));
     SPI_2 -> begin();
     set_acc_scale = 0;
     set_arate_scale = 0;
-    pinMode(25,OUTPUT);
-    digitalWrite(25,1);
+    pinMode(nss_pin,OUTPUT);
+    digitalWrite(nss_pin,1);
 }
 
 int16_t RECoreLSM6Library::getRawAccX(){
@@ -108,29 +108,29 @@ float RECoreLSM6Library::getAngularRateScaleConstant(){
 }
 
 int16_t RECoreLSM6Library::get_multibyte_data(uint8_t head_addr){
-  digitalWrite(25,0);
-  send_spi_data(head_addr,false);
   uint8_t rec_data[2];
+  digitalWrite(nss_pin,0);
+  send_spi_data(head_addr,false);
   receive_spi_data(rec_data,2);
   int16_t return_data = (rec_data[1] << 8) | rec_data[0];
-  digitalWrite(25,1);
+  digitalWrite(nss_pin,1);
   return return_data;
 }
 
 uint8_t RECoreLSM6Library::get_singlebyte_data(uint8_t head_addr){
-  digitalWrite(25,0);
-  send_spi_data(head_addr,false);
   uint8_t rec_data;
+  digitalWrite(nss_pin,0);
+  send_spi_data(head_addr,false);
   receive_spi_data(&rec_data,2);
-  digitalWrite(25,1);
+  digitalWrite(nss_pin,1);
   return rec_data;
 }
 
 void RECoreLSM6Library::write_singlebyte_data(uint8_t head_addr, uint8_t set_data){
-  digitalWrite(25,0);
+  digitalWrite(nss_pin,0);
   send_spi_data(head_addr, true);
   send_spi_data(set_data,true);
-  digitalWrite(25,1); 
+  digitalWrite(nss_pin,1); 
 }
 
 void RECoreLSM6Library::setAccDataRate(uint8_t set_data){

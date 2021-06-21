@@ -98,6 +98,8 @@ class RECoreLSM6Library{
         uint8_t set_arate_rate;
         uint8_t set_arate_scale;
 
+        uint8_t nss_pin = 26;
+
 };
 
 #endif
