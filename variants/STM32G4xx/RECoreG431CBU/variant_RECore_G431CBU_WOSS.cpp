@@ -38,26 +38,26 @@ const PinName digitalPin[] = {
     PB_1, //D14 - SW
 
     //Motor Driver
-    PA_15, //D14   - U1 AIN 1
-    PB_3,  //D15   - U1 AIN 2
-    PB_10, //D16   - U1 BIN 1
-    PB_11, //D17   - U1 BIN 2
-    PC_6,  //D18   - U2 AIN 1
-    PB_5,  //D19   - U2 AIN 2
-    PB_0,  //D20   - U2 BIN 1
-    PB_7,  //D21   - U2 BIN 2
-    PC_13, //D22   - MSLEEP
-    PB_4,  //D23   - MFAULT
-    PA_4,  //D24   - DAC
+    PA_15, //D15   - U1 AIN 1
+    PB_3,  //D16   - U1 AIN 2
+    PB_10, //D17   - U1 BIN 1
+    PB_11, //D18   - U1 BIN 2
+    PC_6,  //D19   - U2 AIN 1
+    PB_5,  //D20   - U2 AIN 2
+    PB_0,  //D21   - U2 BIN 1
+    PB_7,  //D22   - U2 BIN 2
+    PC_13, //D23   - MSLEEP
+    PB_4,  //D24   - MFAULT
+    PA_4,  //D25   - DAC
 
     //IMU ISP
-    PB_12, //D25 - SPI NSS
-    PB_15, //D26 - SPI MOSI
-    PB_14, //D27 - SPI MISO
-    PB_13, //D28 - SPI SCK
+    PB_12, //D26 - SPI NSS
+    PB_15, //D27 - SPI MOSI
+    PB_14, //D28 - SPI MISO
+    PB_13, //D29 - SPI SCK
 
     //Battery Voltage ADC
-    PA_0 //D29 - A8 - VBATIN
+    PA_0 //D30 - A8 - VBATIN
 
     //no work
     //PC_11,  //D30
