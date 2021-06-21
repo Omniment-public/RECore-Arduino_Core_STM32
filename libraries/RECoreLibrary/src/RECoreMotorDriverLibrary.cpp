@@ -18,7 +18,7 @@
 //8 sleep
 //9 fault
 //10 vref
-const uint8_t driver_pin_array[11] = {14,15,16,17,18,19,20,21,22,23,24};
+const uint8_t driver_pin_array[11] = {15,16,17,18,19,20,21,22,23,24,25};
 
 void proc_steps_a(void);
 void proc_steps_b(void);
