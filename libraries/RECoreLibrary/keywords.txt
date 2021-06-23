@@ -1,0 +1,115 @@
+#######################################
+# Syntax Coloring Map RECoreLibrary
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+RECoreLibrary	KEYWORD1
+RECoreAuxFuncLibrary	KEYWORD1
+RECoreMotorDriverLibrary	KEYWORD1
+RECoreLSM6Library	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+# Aux Func
+getBatteryVoltage	KEYWORD2
+getMcuTemp	KEYWORD2
+
+# Motor Lib
+setMotorType	KEYWORD2
+setMotorCurrent	KEYWORD2
+setBrakeMode	KEYWORD2
+setMotorSpeed	KEYWORD2
+setDrivePwm	KEYWORD2
+presetMotorSpeed	KEYWORD2
+presetDrivePwm	KEYWORD2
+setSteppingSpeed	KEYWORD2
+setSteppingSteps	KEYWORD2
+runMotor	KEYWORD2
+stopMotor	KEYWORD2
+getMotorFault	KEYWORD2
+setSleep	KEYWORD2
+getMotorSpeed	KEYWORD2
+
+# LSM6 Lib
+getRawAccX	KEYWORD2
+getRawAccY	KEYWORD2
+getRawAccZ	KEYWORD2
+getAccX	KEYWORD2
+getAccY	KEYWORD2
+getAccZ	KEYWORD2
+getRawAngularRateX	KEYWORD2
+getRawAngularRateY	KEYWORD2
+getRawAngularRateZ	KEYWORD2
+getAngularRateX	KEYWORD2
+getAngularRateY	KEYWORD2
+getAngularRateZ	KEYWORD2
+getTemp	KEYWORD2
+getAccScale	KEYWORD2
+getAccScaleConstant	KEYWORD2
+getAngularRateScale	KEYWORD2
+getAngularRateScaleConstant	KEYWORD2
+
+get_multibyte_data	KEYWORD2
+get_singlebyte_data	KEYWORD2
+write_singlebyte_data	KEYWORD2
+
+setAccDataRate	KEYWORD2
+setAccScale	KEYWORD2
+setAccLpfBandwith	KEYWORD2
+setAngularRateDataRate	KEYWORD2
+setAngularRateScale	KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+SINGLE_DC	LITERAL1
+PARALLEL_DC	LITERAL1
+STEPPING	LITERAL1
+
+MOTOR_UNIT_A	LITERAL1
+MOTOR_UNIT_B	LITERAL1
+COAST	LITERAL1
+BRAKE	LITERAL1
+
+ACC_2G	LITERAL1
+ACC_4G	LITERAL1
+ACC_8G	LITERAL1
+ACC_16G	LITERAL1
+
+A_RATE_250DPS	LITERAL1
+A_RATE_500DPS	LITERAL1
+A_RATE_1000DPS	LITERAL1
+A_RATE_2000DPS	LITERAL1
+A_RATE_125DPS	LITERAL1
+
+ACC_RATE_DOWN	LITERAL1
+ACC_RATE_12_5_HZ	LITERAL1
+ACC_RATE_26_HZ	LITERAL1
+ACC_RATE_52_HZ	LITERAL1
+ACC_RATE_104_HZ	LITERAL1
+ACC_RATE_208_HZ	LITERAL1
+ACC_RATE_416_HZ	LITERAL1
+ACC_RATE_833_HZ	LITERAL1
+ACC_RATE_1660_HZ	LITERAL1
+ACC_RATE_3330_HZ	LITERAL1
+ACC_RATE_6660_HZ	LITERAL1
+
+A_RATE_DOWN	LITERAL1
+A_RATE_12_5_HZ	LITERAL1
+A_RATE_26_HZ	LITERAL1
+A_RATE_52_HZ	LITERAL1
+A_RATE_104_HZ	LITERAL1
+A_RATE_208_HZ	LITERAL1
+A_RATE_416_HZ	LITERAL1
+A_RATE_833_HZ	LITERAL1
+A_RATE_1660_HZ	LITERAL1
