@@ -4,8 +4,8 @@
 # For more info:
 # https://arduino.github.io/arduino-cli/latest/platform-specification/
 
-name=STM32 boards groups (Board to be selected from Tools submenu 'Board part number')
-version=2.0.0
+name=RECore
+version=0.2.0
 
 # STM compile variables
 # ----------------------
@@ -213,15 +213,16 @@ tools.remoteproc_gen.upload.pattern="{busybox}" sh "{path}/{script}" generate "{
 
 # RECore STM32 upload
 # option - port file_path write_addr dev_id page_size
-tools.RECore_dfu_writer.cmd=RECore_dfu_writer.sh
+tools.RECore_uart_writer.cmd=RECore_dfu_writer.sh
 
-#tools.RECore_dfu_writer.cmd.windows=RECore_dfu_writer.bat
-tools.RECore_dfu_writer.cmd.windows=tiny_dfu_writer.exe
+# tools.RECore_dfu_writer.cmd.windows=RECore_dfu_writer.bat
+tools.RECore_uart_writer.cmd.windows=tiny_dfu_writer.exe
 
-tools.RECore_dfu_writer.path.linux={runtime.tools.RECore-STM32-Tools.path}/linux
-tools.RECore_dfu_writer.path.macosx={runtime.tools.RECore-STM32-Tools.path}/macosx
-tools.RECore_dfu_writer.path.windows={runtime.tools.RECore-STM32-Tools.path}/win
-tools.RECore_dfu_writer.upload.params.verbose=
-tools.RECore_dfu_writer.upload.params.quiet=
-#tools.RECore_dfu_writer.upload.pattern="{path}/{cmd}" "{serial.port}" "{build.path}/{build.project_name}.bin" {upload.pid} {upload.pagesize} {}
-tools.RECore_dfu_writer.upload.pattern="{serial.port}" "{build.path}/{build.project_name}.bin" 0x80000000 {upload.pid} {upload.pagesize}
+tools.RECore_uart_writer.path.linux={runtime.tools.RECore-STM32-Tools.path}/linux
+tools.RECore_uart_writer.path.macosx={runtime.tools.RECore-STM32-Tools.path}/macosx
+tools.RECore_uart_writer.path.windows={runtime.tools.RECore-STM32-Tools.path}/win
+tools.RECore_uart_writer.upload.params.verbose=
+tools.RECore_uart_writer.upload.params.quiet=
+
+# tools.RECore_dfu_writer.upload.pattern="{path}/{cmd}" "{serial.port}" "{build.path}/{build.project_name}.bin" {upload.pid}
+tools.RECore_uart_writer.upload.pattern="{serial.port}" "{build.path}/{build.project_name}.bin" 0x80000000 {upload.pid}
