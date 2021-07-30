@@ -223,5 +223,5 @@ tools.RECore_dfu_writer.path.macosx={runtime.tools.RECore-STM32-Tools.path}/maco
 tools.RECore_dfu_writer.path.windows={runtime.tools.RECore-STM32-Tools.path}/win
 tools.RECore_dfu_writer.upload.params.verbose=
 tools.RECore_dfu_writer.upload.params.quiet=
-#tools.RECore_dfu_writer.upload.pattern="{path}/{cmd}" "{serial.port}" "{build.path}/{build.project_name}.bin" {upload.pid} {upload.pid} {}
+#tools.RECore_dfu_writer.upload.pattern="{path}/{cmd}" "{serial.port}" "{build.path}/{build.project_name}.bin" {upload.pid} {upload.pagesize} {}
 tools.RECore_dfu_writer.upload.pattern="{serial.port}" "{build.path}/{build.project_name}.bin" 0x80000000 {upload.pid} {upload.pagesize}

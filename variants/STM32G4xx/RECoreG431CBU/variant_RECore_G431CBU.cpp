@@ -21,17 +21,17 @@ const PinName digitalPin[] = {
     PA_9,  //D1 - VCP TX
 
     //IO PIN Head
-    PA_8,  //D2    - GPIO0
-    PC_4,  //D3    - A0 - GPIO1
-    PB_2,  //D4    - A1 - GPIO2
-    PA_7,  //D5    - A2 - GPIO3
-    PA_6,  //D6    - A3 - GPIO4
-    PA_5,  //D7    - A4 - GPIO5
-    PA_3,  //D8    - A5 - GPIO6
+    PA_8,  //D2    - GPIO0, I2C2 SDA
+    PC_4,  //D3    - A0 - GPIO1, I2C2 SCL
+    PB_2,  //D4    - A1 - GPIO2, SENS1 
+    PA_7,  //D5    - A2 - GPIO3, SPI MOSI, SENS2
+    PA_6,  //D6    - A3 - GPIO4, SPI MISO, SENS3
+    PA_5,  //D7    - A4 - GPIO5, SPI SCK, SENS4
+    PA_3,  //D8    - A5 - GPIO6, USART2_RX, SV2
     PA_1,  //D9    - A6 - GPIO7
-    PA_2,  //D10   - A7 - GPIO8
-    PA_11, //D11   - CAN RX,I2C SCL,Servo3
-    PA_12, //D12   - CAN TX,I2C SDA,Servo4
+    PA_2,  //D10   - A7 - GPIO8, USART2_TX, SV1
+    PA_11, //D11   - CAN RX,Servo3, SV3
+    PA_12, //D12   - CAN TX,Servo4, SV4
 
     //onboard IF
     PB_6, //D13   - LED
