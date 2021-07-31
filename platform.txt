@@ -213,7 +213,8 @@ tools.remoteproc_gen.upload.pattern="{busybox}" sh "{path}/{script}" generate "{
 
 # RECore STM32 upload
 # option - port file_path write_addr dev_id page_size
-tools.RECoreUartWriter.cmd=RECore_uart_writer.sh
+# tools.RECoreUartWriter.cmd=RECore_uart_writer.sh
+tools.RECoreUartWriter.cmd=RECore_uart_writer
 tools.RECoreUartWriter.cmd.windows=RECore_uart_writer.exe
 
 tools.RECoreUartWriter.path.linux={runtime.tools.RECore-STM32-Tools.path}/linux
