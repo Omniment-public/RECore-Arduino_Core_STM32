@@ -213,16 +213,14 @@ tools.remoteproc_gen.upload.pattern="{busybox}" sh "{path}/{script}" generate "{
 
 # RECore STM32 upload
 # option - port file_path write_addr dev_id page_size
-tools.RECore_uart_writer.cmd=RECore_dfu_writer.sh
+tools.RECoreUartWriter.cmd=RECore_uart_writer.sh
+tools.RECoreUartWriter.cmd.windows=RECore_uart_writer.exe
 
-# tools.RECore_dfu_writer.cmd.windows=RECore_dfu_writer.bat
-tools.RECore_uart_writer.cmd.windows=tiny_dfu_writer.exe
+tools.RECoreUartWriter.path.linux={runtime.tools.RECore-STM32-Tools.path}/linux
+tools.RECoreUartWriter.path.macosx={runtime.tools.RECore-STM32-Tools.path}/macosx
+tools.RECoreUartWriter.path.windows={runtime.tools.RECore-STM32-Tools.path}/win
 
-tools.RECore_uart_writer.path.linux={runtime.tools.RECore-STM32-Tools.path}/linux
-tools.RECore_uart_writer.path.macosx={runtime.tools.RECore-STM32-Tools.path}/macosx
-tools.RECore_uart_writer.path.windows={runtime.tools.RECore-STM32-Tools.path}/win
-tools.RECore_uart_writer.upload.params.verbose=
-tools.RECore_uart_writer.upload.params.quiet=
+tools.RECoreUartWriter.upload.params.verbose=
+tools.RECoreUartWriter.upload.params.quiet=
 
-# tools.RECore_dfu_writer.upload.pattern="{path}/{cmd}" "{serial.port}" "{build.path}/{build.project_name}.bin" {upload.pid}
-tools.RECore_uart_writer.upload.pattern="{serial.port}" "{build.path}/{build.project_name}.bin" 0x80000000 {upload.pid}
+tools.RECoreUartWriter.upload.pattern="{path}/{cmd}" {serial.port} "{build.path}/{build.project_name}.bin" 0x80000000 {upload.pid}

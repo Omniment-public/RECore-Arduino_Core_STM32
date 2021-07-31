@@ -46,7 +46,8 @@ RECore.menu.upload_method.autoloaderMethod=RECore Auto Loader (Serial)
 RECore.menu.upload_method.autoloaderMethod.upload.pid=104
 RECore.menu.upload_method.autoloaderMethod.upload.pagesize=0
 RECore.menu.upload_method.autoloaderMethod.upload.options={serial.port.file} -s
-RECore.menu.upload_method.autoloaderMethod.upload.tool=RECore_uart_writer
+RECore.menu.upload_method.autoloaderMethod.upload.protocol=0
+RECore.menu.upload_method.autoloaderMethod.upload.tool=RECoreUartWriter
 
 RECore.menu.upload_method.swdMethod=STM32CubeProgrammer (SWD)
 RECore.menu.upload_method.swdMethod.upload.protocol=0
