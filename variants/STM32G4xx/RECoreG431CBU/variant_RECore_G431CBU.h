@@ -81,7 +81,7 @@
 #define PA11_ALT2               (PA11 | ALT2)
 #define PA12_ALT1               (PA12 | ALT1)
 #define PA12_ALT2               (PA12 | ALT2)
-#define PA13_ALT1               (PA13 | ALT1)
+//#define PA13_ALT1               (PA13 | ALT1)
 #define PA15_ALT1               (PA15 | ALT1)
 #define PB0_ALT1                (PB0  | ALT1)
 #define PB0_ALT2                (PB0  | ALT2)
@@ -164,7 +164,7 @@
 
 // UART Definitions
 #ifndef SERIAL_UART_INSTANCE
-  #define SERIAL_UART_INSTANCE  101
+  #define SERIAL_UART_INSTANCE  1
 #endif
 
 // Default pin used for generic 'Serial' instance
@@ -176,16 +176,19 @@
   #define PIN_SERIAL_TX         PA9
 #endif
 
+#define ENABLE_HWSERIAL2
+#ifndef PIN_SERIAL2_RX
+  #define PIN_SERIAL2_RX PA3_ALT1
+#endif
+#ifndef PIN_SERIAL2_TX
+  #define PIN_SERIAL2_TX PA2_ALT1
+#endif
+
 /* HAL configuration */
 #define HSE_VALUE               (8000000UL)
 
 // Extra HAL modules
 #define HAL_DAC_MODULE_ENABLED
-/*
-#if !defined(HAL_DAC_MODULE_DISABLED)
-  #define HAL_DAC_MODULE_ENABLED
-#endif
-*/
 
 /*----------------------------------------------------------------------------
  *        Arduino objects - C++ only
