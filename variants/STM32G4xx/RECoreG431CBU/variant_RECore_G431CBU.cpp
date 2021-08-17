@@ -60,8 +60,8 @@ const PinName digitalPin[] = {
     PA_0, //D30 - A8 - VBATIN
 
     //no work
-    PC_11, //D31
-    PB_9   //D32
+    //PC_11, //D31
+    //PB_9   //D32
 };
 
 // Analog (Ax) pin number array
@@ -74,7 +74,7 @@ const uint32_t analogInputPin[] = {
     8,  // A5,  PA3
     9,  // A6,  PA1
     10, // A7,  PA2
-    30, // A8,  PA0
+    30 // A8,  PA0
 };
 
 // ----------------------------------------------------------------------------
