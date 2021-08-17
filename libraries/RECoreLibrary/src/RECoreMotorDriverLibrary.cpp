@@ -126,7 +126,7 @@ void RECoreMotorDriverLibrary::setMotorType(uint8_t set_driver_unit, uint8_t set
 
 void RECoreMotorDriverLibrary::setMotorCurrent(uint16_t set_motor_current){
     if(set_motor_current > 1500){
-        return;
+        set_motor_current = 1500;
     }
     
     //calc current to DAC value
@@ -163,8 +163,10 @@ void RECoreMotorDriverLibrary::setDrivePwm(uint8_t set_motor_num, int set_drive_
 
 void RECoreMotorDriverLibrary::presetMotorSpeed(uint8_t set_motor_num, float set_motor_speed){
     //chk over set speed
-    if(set_motor_speed > 1.0 | set_motor_speed < -1.0){
-        return;
+    if(set_motor_speed > 1.0){
+        set_motor_speed = 1.0;
+    }else if(set_motor_speed < -1.0){
+        set_motor_speed = -1.0;
     }
 
     //calc pwm
@@ -210,8 +212,10 @@ void RECoreMotorDriverLibrary::presetMotorSpeed(uint8_t set_motor_num, float set
 }
 
 void RECoreMotorDriverLibrary::presetDrivePwm(uint8_t set_motor_num, int set_drive_pwm){
-    if(set_drive_pwm > 255 | set_drive_pwm < -255){
-        return;
+    if(set_drive_pwm > 255){
+        set_drive_pwm = 255;
+    }else if(set_drive_pwm < -255){
+        set_drive_pwm = -255;
     }
 
     bool dir = false;
