@@ -126,7 +126,7 @@ void RECoreMotorDriverLibrary::setMotorType(uint8_t set_driver_unit, uint8_t set
 
 void RECoreMotorDriverLibrary::setMotorCurrent(uint16_t set_motor_current){
     if(set_motor_current > 1500){
-        return;
+        set_motor_current = 1500;
     }
     
     //calc current to DAC value
