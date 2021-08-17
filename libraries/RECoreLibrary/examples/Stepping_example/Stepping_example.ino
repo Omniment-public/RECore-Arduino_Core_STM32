@@ -35,7 +35,7 @@ void loop() {
   //dir : true , false
 
   //example set MOTOR_UNIT_A 200min^-1
-  recore.setSteppingSpeed(MOTOR_UNIT_A, 200, true);
+  recore.setSteppingSpeed(MOTOR_UNIT_A, 100, true);
   
   delay(1000);
   recore.setSteppingSpeed(MOTOR_UNIT_A, 0, true);
@@ -46,6 +46,6 @@ void loop() {
   //motor unit : MOTOR_UNIT_A , MOTOR_UNIT_B
   //set speed : set min^-1
   //rotate value : int32_t
-  recore.setSteppingSteps(MOTOR_UNIT_A, 200, 200);
+  recore.setSteppingSteps(MOTOR_UNIT_A, 100, 200);
   delay(1000);
 }
