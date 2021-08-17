@@ -165,7 +165,6 @@ void RECoreMotorDriverLibrary::presetMotorSpeed(uint8_t set_motor_num, float set
     //chk over set speed
     if(set_motor_speed > 1.0){
         set_motor_speed = 1.0;
-        return;
     }else if(set_motor_speed < -1.0){
         set_motor_speed = -1.0;
     }
