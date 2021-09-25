@@ -122,6 +122,16 @@
   #define USER_BTN              PB1
 #endif
 
+// Aux pin definitions
+#define SENS1                   PB2
+#define SENS2                   PA7
+#define SENS3                   PA6
+#define SENS4                   PA5
+#define SV1                     PA2
+#define SV2                     PA3
+#define SV3                     PA11
+#define SV4                     PA12
+
 // SPI definitions
 #ifndef PIN_SPI_SS
   #define PIN_SPI_SS            PNUM_NOT_DEFINED
